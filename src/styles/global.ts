@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   border-style, input, textarea, button{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 400;
   }
 
