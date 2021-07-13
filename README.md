@@ -3,7 +3,7 @@
 ### Second project did during the ignite course by @Rocketseat
 
 <p align="center" >
-    <img alt="App printscreen" width="950" src="https://user-images.githubusercontent.com/66370674/125175846-60834080-e1a5-11eb-89f3-700ab7ddc1b7.PNG"/>
+    <img alt="App printscreen" width="950" src="https://user-images.githubusercontent.com/66370674/125530891-b84fe4e7-4ea5-43b7-bff2-9c992c947fa8.png"/>
 </p>
 
 This project helped me to consolidate knowledge on React fundamentals like:
