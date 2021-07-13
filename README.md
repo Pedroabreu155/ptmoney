@@ -1,6 +1,6 @@
 # ptmoney
 
-### Second challenge project did during the ignite course by @Rocketseat
+### Second project did during the ignite course by @Rocketseat
 
 <p align="center" >
     <img alt="App printscreen" width="950" src="https://user-images.githubusercontent.com/66370674/125175846-60834080-e1a5-11eb-89f3-700ab7ddc1b7.PNG"/>
