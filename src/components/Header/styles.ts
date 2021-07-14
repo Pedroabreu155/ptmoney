@@ -14,7 +14,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  button {
+  button.transactionsButton {
     font-size: 1rem;
     color: #fff;
     background-color: var(--orange);
@@ -22,10 +22,10 @@ export const Content = styled.div`
     padding: 0 2rem;
     border-radius: 0.25rem;
     height: 3rem;
+    transition: filter 0.2s;
 
     &:hover {
-      /* filter: brightness(0.92); */
-      border: 1px solid white;
+      filter: brightness(0.9);
     }
   }
 `;
