@@ -6,7 +6,7 @@ import { Container, Content } from './styles';
 
 import { useTheme } from '../../hooks/useTheme';
 
-import logoImg from '../../assets/images/logo.svg';
+import logoPngImg from '../../assets/images/logo-png.png';
 
 export function Header() {
   const { toggleTheme, theme } = useTheme();
@@ -19,7 +19,7 @@ export function Header() {
   return (
     <Container>
       <Content>
-        <img src={logoImg} alt="pt money" />
+        <img src={logoPngImg} alt="pt money" />
         <button className="toggleTheme" type="button" onClick={changeTheme}>
           {theme === 'dark' ? <FiSun /> : <FiMoon />}
         </button>

@@ -14,6 +14,10 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  img {
+    width: 13.5rem;
+  }
+
   button.toggleTheme {
     border: none;
     padding: 0.3rem 2rem;
