@@ -14,6 +14,23 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  button.toggleTheme {
+    border: none;
+    padding: 0.3rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 0.25rem;
+    background-color: var(--orange);
+    transition: filter 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
   button.transactionsButton {
     font-size: 1rem;
     color: #fff;

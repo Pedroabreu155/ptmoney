@@ -1,9 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
+const theme = localStorage.getItem('theme');
+
 export const GlobalStyles = createGlobalStyle`
   
   :root{
     --background: #f0f2f5;
+    --background-dark: #121225;
 
     --red: #E52e54;
     --blue: #5429CC;
@@ -35,11 +38,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    background-color: var(--background);
+    background-color: ${theme === 'dark' ? '#121248' : '#f0f2f5'};
     -webkit-font-font-smoothing: antialiased;
   }
 
-  border-style, input, textarea, button{
+  body, input, textarea, button{
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 400;
   }
