@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 
 import { useTransactionsModal } from '../../hooks/useTransactionsModal';
 
+Modal.setAppElement('#root');
+
 export function NewTransactionsModal() {
   const { isNewTransactionsModalOpen, handleCloseNewtransactionsModal } =
     useTransactionsModal();
