@@ -5,8 +5,7 @@ const theme = localStorage.getItem('theme');
 export const GlobalStyles = createGlobalStyle`
   
   :root{
-    --background: #f0f2f5;
-    --background-dark: #121225;
+    --background: ${theme === 'dark' ? '#555' : '#f0f2f5'};
 
     --red: #E52e54;
     --blue: #5429CC;
@@ -15,16 +14,17 @@ export const GlobalStyles = createGlobalStyle`
     --dark-orange: #FF8C00;
     --orange: 	#FFA100;
 
-    --text-title: #363f5f;
-    --text-body: #969cb3;
+    --text-title: ${theme === 'dark' ? '#fff' : '#363f5f'};
+    --text-body: ${theme === 'dark' ? '#fff' : '#969cb3'};
 
-    --shape: #FFFFFF
+    --shape: ${theme === 'dark' ? '#121212' : '#fff'}
   }
   
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
   }
 
   html{
@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    background-color: ${theme === 'dark' ? '#121248' : '#f0f2f5'};
+    background-color: var(--background);
     -webkit-font-font-smoothing: antialiased;
   }
 
@@ -58,6 +58,34 @@ export const GlobalStyles = createGlobalStyle`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .modal-overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .modal-content{
+    width: 100%;
+    max-width: 576px;
+
+    background-color: var(--background);
+
+    padding: 3rem;
+
+    position: relative;
+
+    border-radius: 0.25rem;
   }
 
 `;
