@@ -88,4 +88,17 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 0.25rem;
   }
 
+  .close-modal-btn{
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background-color: transparent;
+    transition: filter 0.2s;
+
+    &:hover{
+      filter: brightness(0.8)
+    }
+  }
+
 `;
