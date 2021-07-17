@@ -6,7 +6,11 @@ import incomesImg from '../../assets/images/income.svg';
 import outcomesImg from '../../assets/images/outcome.svg';
 import totalImg from '../../assets/images/total.svg';
 
+import { useTransactions } from '../../hooks/useTransactions';
+
 export function Summary() {
+  const { transactions } = useTransactions();
+
   return (
     <Container>
       <div>

@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { toast } from 'react-toastify';
 
 import { useTransactionsModal } from '../../hooks/useTransactionsModal';
+import { useTransactions } from '../../hooks/useTransactions';
 
 import {
   Container,
@@ -15,14 +16,14 @@ import closeImg from '../../assets/images/close.svg';
 import incomeImg from '../../assets/images/income.svg';
 import outcomeImg from '../../assets/images/outcome.svg';
 
-import { api } from '../../services/api';
-
 Modal.setAppElement('#root');
 toast.configure();
 
 export function NewTransactionsModal() {
   const { isNewTransactionsModalOpen, handleCloseNewtransactionsModal } =
     useTransactionsModal();
+
+  const { createTransaction } = useTransactions();
 
   const [title, setTitle] = useState('');
   const [type, setType] = useState('deposit');
@@ -36,7 +37,7 @@ export function NewTransactionsModal() {
     setCategory('');
   }
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
     if (title === '' || amount === 0 || category === '') {
@@ -44,15 +45,15 @@ export function NewTransactionsModal() {
       return;
     }
 
-    const data = {
+    await createTransaction({
       title,
       amount,
       type,
       category,
-    };
+    });
 
-    api.post('/transactions', data);
     clearInputs();
+    handleCloseNewtransactionsModal();
   }
 
   return (
