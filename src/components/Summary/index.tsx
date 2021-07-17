@@ -11,6 +11,25 @@ import { useTransactions } from '../../hooks/useTransactions';
 export function Summary() {
   const { transactions } = useTransactions();
 
+  const summary = transactions.reduce(
+    (accumulator, transaction) => {
+      if (transaction.type === 'deposit') {
+        accumulator.deposits += transaction.amount;
+        accumulator.total += transaction.amount;
+      } else {
+        accumulator.withdraws += transaction.amount;
+        accumulator.total -= transaction.amount;
+      }
+
+      return accumulator;
+    },
+    {
+      deposits: 0,
+      withdraws: 0,
+      total: 0,
+    }
+  );
+
   return (
     <Container>
       <div>
@@ -18,7 +37,12 @@ export function Summary() {
           <p>Entradas</p>
           <img src={incomesImg} alt="Entradas" />
         </header>
-        <strong>R$ 2000,00</strong>
+        <strong>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.deposits)}
+        </strong>
       </div>
 
       <div>
@@ -26,7 +50,13 @@ export function Summary() {
           <p>Saídas</p>
           <img src={outcomesImg} alt="Saídas" />
         </header>
-        <strong>-R$ 500,00</strong>
+        <strong>
+          -
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.withdraws)}
+        </strong>
       </div>
 
       <div className="totalCard">
@@ -34,7 +64,12 @@ export function Summary() {
           <p>Total</p>
           <img src={totalImg} alt="Toatal" />
         </header>
-        <strong>R$ 1500,00</strong>
+        <strong>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.total)}
+        </strong>
       </div>
     </Container>
   );
